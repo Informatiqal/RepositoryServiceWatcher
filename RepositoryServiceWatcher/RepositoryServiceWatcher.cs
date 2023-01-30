@@ -17,12 +17,12 @@ namespace RepositoryServiceWatcher
         protected override void OnStart(string[] args) {
             string url = System.Configuration.ConfigurationManager.AppSettings["url"];
             string serviceName = System.Configuration.ConfigurationManager.AppSettings["serviceName"];
-            if(serviceName == String.Empty)
+            if(serviceName == null)
             {
                 serviceName = "QlikSenseRepositoryService";
             }
 
-            if (url == String.Empty)
+            if (url == null)
             {
                 using (EventLog eventLog = new EventLog("Application"))
                 {
